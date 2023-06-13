@@ -1,16 +1,51 @@
+# City Explorer
 
-Lab 06: Adding API
 
-Estimate of time needed to complete: 3 hours
+### Lab 06: Set up your React repository & API keys
 
-Start time: 7:15 pm (EST)
+Estimate of time needed to complete: 2 hours
+
+Start time: 4 pm (EST)
+
+Finish time: 7 pm (EST)
+
+Actual time needed to complete: 3 hours
+
+### Lab 06: Locations: As a user of City Explorer, I want to enter the name of a location so that I can see the exact latitude and longitude of that location.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 7 pm (EST)
+
+Finish time: 9pm pm (EST)
+
+Actual time needed to complete: 2 hours
+
+### Lab 06: Map: As a user, I want to see a map of the city so that I can see the layout of the area I want to explore.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 9:00 pm (EST)
 
 Finish time: 10 pm (EST)
 
-Actual time needed to complete: 2 hours and 45 minutes
+Actual time needed to complete: 1 hour
+
+### Lab 06: Errors: As a user, I want clear messages if something goes wrong so I know if I need to make any changes or try again in a different manner.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 10:00 pm (EST)
+
+Finish time: 11 pm (EST)
+
+Actual time needed to complete: 1 hour
 
 
-City-Explorer
+### Web Request Response Cycle
+![Image of WRRC](src/img/wrrc.png)
+
+
 
 **Author**: Jennifer Sung
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
