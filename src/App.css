@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+
+.div-app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading-app {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  font-family: 'Tilt Prism', cursive;
+  font-size: 100px;
+  color:
+}
+
+.btn-primary {
+  margin: 10px auto;
+  display: block;
+}
+
+body {
+  background-color: #d6b6b6; 
+}
