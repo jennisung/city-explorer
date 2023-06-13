@@ -6,7 +6,7 @@ class Error extends React.Component {
     return (
       <>
         <Alert variant="warning">
-          <Alert.Heading>Oh snap! You got an Error! {this.props.statusCode}</Alert.Heading>
+          <Alert.Heading>Oh snap! You got an Error!</Alert.Heading>
           <p>{this.props.errorMessage}</p>
         </Alert>
       </>
