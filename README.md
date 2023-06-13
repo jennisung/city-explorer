@@ -3,11 +3,11 @@ Lab 06: Adding API
 
 Estimate of time needed to complete: 3 hours
 
-Start time: 7:15 pm (EST)
+Start time: 7:00 pm (EST)
 
-Finish time: 10 pm (EST)
+Finish time: 12 pm (EST)
 
-Actual time needed to complete: 2 hours and 45 minutes
+Actual time needed to complete: 5 
 
 
 City-Explorer
