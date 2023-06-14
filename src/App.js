@@ -6,6 +6,7 @@ import Map from './Map';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './App.css';
+import Weather from './Weather'
 
 
 
@@ -17,6 +18,7 @@ class App extends React.Component {
       locationData: {},
       error: false, //keep it false so that catch will handle errors, then switch boolean to true
       errorMessage: '',
+      forecastData: [],
     };
   }
 
@@ -48,6 +50,7 @@ class App extends React.Component {
           locationData: dataFromAxios[0],
           error: false,
           errorMessage: ''
+
         });
       } 
     } catch (error) {
@@ -59,23 +62,44 @@ class App extends React.Component {
     }
   }
 
+  // WEATHER
+
+  getWeatherForecast = async () => {
+    try {
+      let weatherURL = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+      let weatherDataAxios = await axios.get(weatherURL);
+      let forecastData = weatherDataAxios.data;
+      this.setState({
+        forecastData,
+      });
+    } catch (error) {
+      this.setState({
+        error: true,
+        errorMessage: error.message,
+      });
+    }
+  }
+
+ 
 
   // TODO: render method Form with an input field for the city and a submit button.
   // If this.state.error === true, the <Error> component rendered with the errorMessage prop set to this.state.errorMessage, showing an error. If this.state.error is false, the code checks if this.state.locationData is truthy. If it is, the <Map> component is rendered displaying the location data on a map.
+
   render() {
     return (
       <div className="div-app">
         <h1 className="heading-app">City Explorer</h1>
-        {/* FORM and BUTTON COMPONENT: specify event handler */}
         <Form onSubmit={this.handleGetCityInfo}>
           <Form.Control type="text" placeholder="Enter city name" onChange={this.handleCityInput} />
-          {/* Button triggers form submission */}
           <Button variant="primary" type="submit">Explore!</Button>
         </Form>
         {this.state.error ? (
           <Error errorMessage={this.state.errorMessage} />
         ) : (
-          this.state.locationData && <Map locationData={this.state.locationData} />
+          <>
+            {this.state.locationData && <Map locationData={this.state.locationData} />}
+            {this.state.forecastData.length > 0 && <Weather forecastData={this.state.forecastData} />}
+          </>
         )}
       </div>
     );
