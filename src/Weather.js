@@ -7,12 +7,10 @@ class Weather extends React.Component {
       <div>
         <h2>City Weather</h2>
         <div className="weather-div">
-          {this.props.forecastData.map((forecast, index) => (
-            <div key={index} className="weather-card">
-              <p>Date: {forecast.date}</p>
-              <p>Description: {forecast.description}</p>
+            <div className="weather-card">
+              <p>Date: {this.props.forecast.date}</p>
+              <p>Description: {this.props.forecast.description}</p>
             </div>
-          ))}
         </div>
       </div>
     );
