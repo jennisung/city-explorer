@@ -1,17 +1,18 @@
 import React from 'react';
 
-
 class Weather extends React.Component {
   render() {
     return (
       <div>
         <h2>City Weather</h2>
-        <div className="weather-div">
+        {this.props.forecastData.map((day, index) => (
+          <div key={index} className="weather-div">
             <div className="weather-card">
-              <p>Date: {this.props.forecast.date}</p>
-              <p>Description: {this.props.forecast.description}</p>
+              <p>Date: {day.date}</p>
+              <p>Description: {day.description}</p>
             </div>
-        </div>
+          </div>
+        ))}
       </div>
     );
   }
