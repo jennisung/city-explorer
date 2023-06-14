@@ -52,6 +52,8 @@ class App extends React.Component {
           errorMessage: ''
 
         });
+        
+        this.getWeatherForecast(dataFromAxios[0].lat, dataFromAxios[0].lon);
       } 
     } catch (error) {
       // TODO THREE: If there is an ERROR then >>>> Set state with the error boolean and the error message
@@ -64,9 +66,9 @@ class App extends React.Component {
 
   // WEATHER
 
-  getWeatherForecast = async () => {
+  getWeatherForecast = async (lat, lon) => {
     try {
-      let weatherURL = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.city}`;
+      let weatherURL = `${process.env.REACT_APP_SERVER}/weather?lat=${lat}=&lon=${lon}&searchQuery=${this.state.city}`;
       let weatherDataAxios = await axios.get(weatherURL);
       let forecastData = weatherDataAxios.data;
       this.setState({
