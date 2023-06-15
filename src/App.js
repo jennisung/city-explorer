@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import './App.css';
 import Weather from './Weather'
+import Movies from './Movies';
 
 
 
@@ -19,6 +20,7 @@ class App extends React.Component {
       error: false, //keep it false so that catch will handle errors, then switch boolean to true
       errorMessage: '',
       forecastData: [],
+      moviesData: [],
     };
   }
 
@@ -54,6 +56,7 @@ class App extends React.Component {
         });
         
         this.getWeatherForecast(dataFromAxios[0].lat, dataFromAxios[0].lon);
+        this.getMovieData();
       } 
     } catch (error) {
       // TODO THREE: If there is an ERROR then >>>> Set state with the error boolean and the error message
@@ -82,6 +85,23 @@ class App extends React.Component {
     }
   }
 
+
+  getMovieData = async (searchQuery) => {
+    try {
+      let moviesURL = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${searchQuery}`;
+      let movieDataAxios = await axios.get(moviesURL);
+      let moviesData = movieDataAxios.data;
+      this.setState({
+        moviesData,
+      });
+    } catch (error) {
+      this.setState({
+        error: true,
+        errorMessage: error.message,
+      });
+    }
+  }
+
  
 
   // TODO: render method Form with an input field for the city and a submit button.
@@ -101,6 +121,7 @@ class App extends React.Component {
           <>
             {this.state.locationData && <Map locationData={this.state.locationData} />}
             {this.state.forecastData.length > 0 && <Weather forecastData={this.state.forecastData} />}
+            {this.state.forecastData.length > 0 && <Movies moviesData={this.state.moviesData} />}
           </>
         )}
       </div>
