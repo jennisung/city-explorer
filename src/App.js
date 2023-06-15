@@ -75,6 +75,7 @@ class App extends React.Component {
       let weatherDataAxios = await axios.get(weatherURL);
       let forecastData = weatherDataAxios.data;
       this.setState({
+        error: false,
         forecastData,
       });
     } catch (error) {
@@ -86,12 +87,13 @@ class App extends React.Component {
   }
 
 
-  getMovieData = async (searchQuery) => {
+  getMovieData = async () => {
     try {
-      let moviesURL = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${searchQuery}`;
+      let moviesURL = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.city}`;
       let movieDataAxios = await axios.get(moviesURL);
       let moviesData = movieDataAxios.data;
       this.setState({
+        error: false,
         moviesData,
       });
     } catch (error) {
