@@ -71,12 +71,13 @@ class App extends React.Component {
 
   getWeatherForecast = async (lat, lon) => {
     try {
-      let weatherURL = `${process.env.REACT_APP_SERVER}/weather?lat=${lat}=&lon=${lon}&searchQuery=${this.state.city}`;
+      let weatherURL = `${process.env.REACT_APP_SERVER}/weather?lat=${lat}&lon=${lon}&searchQuery=${this.state.city}`;
       let weatherDataAxios = await axios.get(weatherURL);
       let forecastData = weatherDataAxios.data;
+      console.log('forecast data', forecastData);
       this.setState({
         error: false,
-        forecastData,
+        forecastData: forecastData,
       });
     } catch (error) {
       this.setState({
@@ -92,6 +93,7 @@ class App extends React.Component {
       let moviesURL = `${process.env.REACT_APP_SERVER}/movies?searchQuery=${this.state.city}`;
       let movieDataAxios = await axios.get(moviesURL);
       let moviesData = movieDataAxios.data;
+      console.log(moviesData);
       this.setState({
         error: false,
         moviesData,
@@ -110,6 +112,7 @@ class App extends React.Component {
   // If this.state.error === true, the <Error> component rendered with the errorMessage prop set to this.state.errorMessage, showing an error. If this.state.error is false, the code checks if this.state.locationData is truthy. If it is, the <Map> component is rendered displaying the location data on a map.
 
   render() {
+    console.log(this.state.forecastData);
     return (
       <div className="div-app">
         <h1 className="heading-app">City Explorer</h1>
