@@ -8,6 +8,11 @@ import Button from 'react-bootstrap/Button';
 import './App.css';
 import Weather from './components/Weather'
 import Movies from './components/Movies';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import WelcomeTab from './WelcomeTab';
+
+
 
 
 
@@ -107,16 +112,25 @@ class App extends React.Component {
         {this.state.error ? (
           <Error errorMessage={this.state.errorMessage} />
         ) : (
-          <>
-            {this.state.locationData && <Map locationData={this.state.locationData} />}
-            {this.state.forecastData.length > 0 && <Weather forecastData={this.state.forecastData} />}
-            {this.state.forecastData.length > 0 && <Movies moviesData={this.state.moviesData} />}
-          </>
+          <Tabs defaultActiveKey="city-explorer-tabs" id="city-explorer-tabs">
+            <Tab eventKey="welcome" title="Welcome" mountOnEnter unmountOnExit>
+              <WelcomeTab />
+            </Tab>
+            <Tab eventKey="location" title="Location">
+              {this.state.locationData && <Map locationData={this.state.locationData} />}
+            </Tab>
+            <Tab eventKey="weather" title="Weather-Forecast">
+              {this.state.forecastData.length > 0 && <Weather forecastData={this.state.forecastData} />}
+            </Tab>
+            <Tab eventKey="movies" title="Movies">
+              {this.state.moviesData.length > 0 && <Movies moviesData={this.state.moviesData} />}
+            </Tab>
+          </Tabs>
         )}
       </div>
     );
   }
 }
-
+  
 export default App;
 
