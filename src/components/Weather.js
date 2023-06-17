@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 class Weather extends React.Component {
   render() {
-    let forecastData = this.props.forecastData.slice(0, 16);
+    let forecastData = this.props.forecastData.slice(0, 5);
     let randomIndex = Math.floor(Math.random() * forecastData.length);
     let randomDay = forecastData[randomIndex];
 
