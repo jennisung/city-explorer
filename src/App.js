@@ -10,7 +10,8 @@ import Weather from './components/Weather'
 import Movies from './components/Movies';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import WelcomeTab from './WelcomeTab';
+import WelcomeTab from './components/WelcomeTab';
+import Footer from './components/Footer';
 
 
 
@@ -26,6 +27,7 @@ class App extends React.Component {
       error: false, 
       forecastData: [],
       moviesData: [],
+      activeTab: 'welcome', 
     };
   }
 
@@ -47,7 +49,8 @@ class App extends React.Component {
         this.setState({
           locationData: dataFromAxios[0],
           error: false,
-          errorMessage: ''
+          errorMessage: '',
+          activeTab: 'location',
         });
         this.getWeatherForecast(dataFromAxios[0].lat, dataFromAxios[0].lon);
         this.getMovieData();
@@ -112,7 +115,7 @@ class App extends React.Component {
         {this.state.error ? (
           <Error errorMessage={this.state.errorMessage} />
         ) : (
-          <Tabs defaultActiveKey="city-explorer-tabs" id="city-explorer-tabs">
+            <Tabs activeKey={this.state.activeTab} id="city-explorer-tabs" onSelect={(tab) => this.setState({ activeTab: tab })}>
             <Tab eventKey="welcome" title="Welcome" mountOnEnter unmountOnExit>
               <WelcomeTab />
             </Tab>
@@ -127,6 +130,9 @@ class App extends React.Component {
             </Tab>
           </Tabs>
         )}
+          <div>
+           <Footer />
+           </div>
       </div>
     );
   }
