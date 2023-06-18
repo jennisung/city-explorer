@@ -11,7 +11,6 @@ import Movies from './components/Movies';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import WelcomeTab from './components/WelcomeTab';
-import Footer from './components/Footer';
 
 
 
@@ -130,9 +129,7 @@ class App extends React.Component {
             </Tab>
           </Tabs>
         )}
-          <div>
-           <Footer />
-           </div>
+       
       </div>
     );
   }

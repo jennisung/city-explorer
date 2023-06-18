@@ -1,20 +1,20 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import '../styles/WelcomeTab.css';
+
 
 const WelcomeTab = () => {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className="card-welcome" style={{ width: '18rem' }}>
       <Card.Body>
-        <Card.Title>Welcome to City Explorer</Card.Title>
-        <Card.Subtitle className="card-subtitle-welcome" > Plan your next adventure with us</Card.Subtitle>
+        <Card.Title className="card-title-welcome">Welcome to City Explorer</Card.Title>
+        <Card.Subtitle className="card-subtitle-welcome">Plan your next adventure with us</Card.Subtitle>
         <Card.Text>
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-        </Card.Text>
+        After entering a city, navigate through our tabs to check the geographical location of that city, review the 7-day forecast, and browse movies associated with keywords related to that city!        </Card.Text>
         <Card.Text>
-          Click on the links below to find 
+          Lets Connect! Click Below to connect with me on my LinkedIn
         </Card.Text>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+        <Card.Link href="https://www.linkedin.com/in/jennisung/">LinkedIn</Card.Link>
       </Card.Body>
     </Card>
   );
