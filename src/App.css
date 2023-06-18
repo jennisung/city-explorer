@@ -66,3 +66,17 @@ body {
   background-size: cover;
 }
 
+
+
+.nav-tabs .nav-link {
+  background-color: white;
+  color: black;
+  margin-right: 5px; 
+}
+
+.nav-tabs .nav-link.active {
+  background-color: white;
+}
+
+
+

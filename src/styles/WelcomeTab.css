@@ -2,10 +2,22 @@
   text-align: center;
 }
 
-.card-title-welcome {
+.card-title-welcome .card-subtitle-welcome {
   text-align: center;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 30px;
+}
+
+.card-subtitle-welcome {
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .card {
   margin-top: 50px;
+}
+
+
+.card-text {
+  margin-bottom: 1.5rem;
 }
