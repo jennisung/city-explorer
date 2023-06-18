@@ -1,5 +1,7 @@
 import Table from 'react-bootstrap/Table';
 import React from 'react';
+import '../styles/Weather.css';
+
 
 class Weather extends React.Component {
   render() {
@@ -7,7 +9,7 @@ class Weather extends React.Component {
     return (
       <div className="div-weather">
         {/* <h2 >City Weather</h2> */}
-        <Table striped bordered hover>
+        <Table className='weather-table' striped bordered hover>
           <thead>
            <tr>
            <td colSpan={2}> <h2 className='city-weather-heading'>City Weather</h2> </td>     

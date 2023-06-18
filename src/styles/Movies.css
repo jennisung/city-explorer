@@ -1,0 +1,8 @@
+.movie-card {
+  max-width: 450px;
+  margin-bottom: 50px;
+}
+
+.movie-card .card-text p {
+  margin-bottom: 0.5rem;
+}
