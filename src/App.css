@@ -50,7 +50,7 @@
   margin-top: 20px;
   font-family: 'Tilt Prism', cursive;
   font-size: 100px;
-  color: white;
+  color: rgb(9, 9, 9);
   font-weight: bold 155;
 }
 
@@ -61,7 +61,7 @@
 
 body {
   /* background-color: #d6b6b6;  */
-  background-image: url('../src/img/p1.jpg');
+  background-image: url('../src/img/p3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
