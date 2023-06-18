@@ -12,7 +12,7 @@ class Weather extends React.Component {
         <Table className='weather-table' striped bordered hover>
           <thead>
            <tr>
-           <td colSpan={2}> <h2 className='city-weather-heading'>City Weather</h2> </td>     
+           <td colSpan={2}> <h2 className='city-weather-heading'>7 day forecast</h2> </td>     
            </tr>
 
             <tr>
