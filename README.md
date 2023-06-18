@@ -1,5 +1,13 @@
 # City Explorer
 
+### Lab10: Adding Cache
+Estimate of time needed to complete: 1 hour
+
+Start time: 7pm
+
+Finish time: 8pm
+
+Actual time needed to complete: 1 hour
 
 ### Lab 06: Set up your React repository & API keys
 
